@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Loftsuite Hotel Saas, Saas-Almagell – Komfortable Lofts</title>
+  <meta name="description" content="Loftsuite Hotel Saas in Saas-Almagell: Gemütliche, durchdacht eingerichtete Lofts mit Sauna und Whirlpool. Persönliche Atmosphäre, ruhig gelegen.">
+  <style>
+    :root {
+      --bg: #FAF8F5;
+      --text: #2D2D2D;
+      --muted: #5E5E5E;
+      --accent: #4A5D52;
+      --accent-light: #E8EDEA;
+      --line: #E0DDD7;
+      --white: #FFFFFF;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 17px;
+      line-height: 1.6;
+      color: var(--text);
+      background-color: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.25;
+      font-weight: 500;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      letter-spacing: -0.02em;
+    }
+
+    h2 {
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      color: var(--muted);
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    section {
+      padding: 4rem 1.5rem;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .narrow {
+      max-width: 760px;
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-end;
+      padding: 0;
+      background-color: var(--text);
+    }
+
+    .hero__image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.85;
+    }
+
+    .hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(45,45,45,0.7) 0%, rgba(45,45,45,0.2) 50%, rgba(45,45,45,0.1) 100%);
+    }
+
+    .hero__content {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      padding: 2rem 1.5rem 4rem;
+      color: var(--white);
+    }
+
+    .hero__content h1 {
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+
+    .hero__headline {
+      font-size: clamp(1.4rem, 3.5vw, 2rem);
+      font-weight: 400;
+      line-height: 1.35;
+      color: var(--white);
+      opacity: 0.95;
+      margin-bottom: 1rem;
+    }
+
+    .hero__sub {
+      font-size: 1.05rem;
+      max-width: 600px;
+      color: rgba(255,255,255,0.85);
+    }
+
+    /* About */
+    .about__grid {
+      display: grid;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .about__image {
+      border-radius: 4px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+    }
+
+    /* Features */
+    .features {
+      background-color: var(--accent-light);
+    }
+
+    .features__grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .feature-card {
+      background-color: var(--white);
+      padding: 2rem;
+      border-radius: 4px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    }
+
+    .feature-card h3 {
+      color: var(--accent);
+    }
+
+    /* Rooms */
+    .rooms__grid {
+      display: grid;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .rooms__image {
+      border-radius: 4px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+    }
+
+    /* Location */
+    .location {
+      background-color: var(--accent-light);
+    }
+
+    .location__grid {
+      display: grid;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .location__image {
+      border-radius: 4px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+    }
+
+    /* CTA */
+    .cta {
+      text-align: center;
+    }
+
+    .cta__phone {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 1rem 2rem;
+      background-color: var(--accent);
+      color: var(--white);
+      font-size: 1.1rem;
+      border-radius: 4px;
+    }
+
+    .cta__phone:hover {
+      background-color: #3A4A41;
+      text-decoration: none;
+    }
+
+    /* Footer */
+    footer {
+      padding: 3rem 1.5rem;
+      background-color: var(--text);
+      color: rgba(255,255,255,0.75);
+      text-align: center;
+      font-size: 0.95rem;
+    }
+
+    footer a {
+      color: var(--white);
+    }
+
+    footer p {
+      color: rgba(255,255,255,0.75);
+    }
+
+    .footer__contact {
+      margin-bottom: 1.5rem;
+      font-size: 1.05rem;
+      color: var(--white);
+    }
+
+    .footer__contact a {
+      color: var(--white);
+    }
+
+    .footer__meta {
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .footer__meta p {
+      margin-bottom: 0.35rem;
+      font-size: 0.9rem;
+    }
+
+    @media (min-width: 768px) {
+      section {
+        padding: 6rem 2rem;
+      }
+
+      .hero__content {
+        padding: 3rem 2rem 6rem;
+      }
+
+      .about__grid,
+      .rooms__grid,
+      .location__grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+      }
+
+      .rooms__grid .rooms__text {
+        order: 2;
+      }
+
+      .features__grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <img src="img/0.jpg" alt="Loftsuite Hotel Saas in Saas-Almagell" class="hero__image">
+    <div class="hero__overlay"></div>
+    <div class="hero__content container">
+      <h1>Loftsuite Hotel Saas</h1>
+      <p class="hero__headline">Komfortabel wohnen unter dem Dach</p>
+      <p class="hero__sub">Gemütliche Lofts mit Sauna und Whirlpool, Teil des Zurbriggen Wellness Hotel &amp; Spa.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="about" aria-labelledby="about-heading">
+      <div class="container about__grid">
+        <div class="about__text">
+          <h2 id="about-heading">Ihr Aufenthalt im Loftsuite Hotel Saas</h2>
+          <p>Das Loftsuite Hotel Saas befindet sich in Saas-Almagell und ist Teil des Zurbriggen Wellness Hotel &amp; Spa. Die Lofts bieten eine durchdachte und gemütliche Einrichtung. Gäste schätzen die besondere Aufteilung mit Sauna und Whirlpool auf unterschiedlichen Ebenen. Das Haus liegt ruhig, direkt über dem Spa-Bereich und unter dem Dach. Die Atmosphäre ist persönlich und lädt zum Verweilen ein.</p>
+        </div>
+        <img src="img/1.jpg" alt="Gemütlich eingerichteter Loft-Bereich im Loftsuite Hotel Saas" class="about__image" loading="lazy">
+      </div>
+    </section>
+
+    <section class="features" aria-labelledby="features-heading">
+      <div class="container narrow">
+        <h2 id="features-heading" class="sr-only">Ausstattung</h2>
+        <div class="features__grid">
+          <article class="feature-card">
+            <h3>Gemütliche Einrichtung</h3>
+            <p>Die Lofts sind mit viel Liebe zum Detail gestaltet und bieten eine angenehme, wohnliche Atmosphäre für Ihren Aufenthalt.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Sauna und Whirlpool</h3>
+            <p>Jede Loft-Suite verfügt über eine eigene Sauna und einen Whirlpool, die sich auf verschiedenen Ebenen befinden.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Ruhige Lage</h3>
+            <p>Das Hotel liegt über dem Spa-Bereich und unter dem Dach, was für Ruhe und Privatsphäre sorgt.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="rooms" aria-labelledby="rooms-heading">
+      <div class="container rooms__grid">
+        <div class="rooms__text">
+          <h2 id="rooms-heading">Lofts mit besonderem Zuschnitt</h2>
+          <p>Die Zimmer im Loftsuite Hotel Saas sind gemütlich und durchdacht eingerichtet. Gäste loben die Aufteilung mit Sauna und Whirlpool auf unterschiedlichen Ebenen. Jedes Loft bietet eine persönliche und wohnliche Atmosphäre.</p>
+        </div>
+        <img src="img/2.jpg" alt="Loft-Suite im Loftsuite Hotel Saas mit besonderem Zuschnitt" class="rooms__image" loading="lazy">
+      </div>
+    </section>
+
+    <section class="location" aria-labelledby="location-heading">
+      <div class="container location__grid">
+        <div class="location__text">
+          <h2 id="location-heading">Ruhig in Saas-Almagell</h2>
+          <p>Das Hotel liegt an der Furusandstrasse 16 in Saas-Almagell. Die Umgebung ist ruhig und eignet sich gut für einen entspannten Aufenthalt im Saastal.</p>
+        </div>
+        <img src="img/3.jpg" alt="Ruhige Lage des Loftsuite Hotel Saas in Saas-Almagell" class="location__image" loading="lazy">
+      </div>
+    </section>
+
+    <section class="cta" aria-labelledby="cta-heading">
+      <div class="container narrow">
+        <h2 id="cta-heading">Direkt anfragen</h2>
+        <p>Für weitere Informationen oder eine Buchung rufen Sie uns bitte an oder schreiben Sie uns. Persönliche Rückfragen sind willkommen.</p>
+        <a href="tel:0279572301" class="cta__phone">027 957 23 01</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p class="footer__contact">
+      <a href="https://maps.google.com/?cid=18388160805502378792&amp;g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA">Furusandstrasse 16, 3905 Saas-Almagell, Schweiz</a>
+      ·
+      <a href="tel:0279572301">027 957 23 01</a>
+    </p>
+    <div class="footer__meta">
+      <p>Fotos: HJ Ya, Adriano</p>
+      <p>Built by TitanixTech — <a href="mailto:tools@titanixtech.com">tools@titanixtech.com</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
