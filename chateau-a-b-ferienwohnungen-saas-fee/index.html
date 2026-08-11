@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Château A & B Ferienwohnungen Saas-Fee</title>
+  <meta name="description" content="Ferienwohnungen mit Spa, Sauna und Fitness in Saas-Fee. 4.4 Sterne bei 31 Gästen. Ruhige Lage nahe Dorf und Pisten.">
+  <style>
+    :root {
+      --accent: #0072c6;
+      --text: #1a1a1a;
+      --bg: #ffffff;
+      --muted: #f6f7f8;
+      --border: #e5e7eb;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+      font-size: 17px;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    header {
+      position: relative;
+      min-height: 75vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    header img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.55));
+      z-index: -1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      padding: 2rem 1.5rem;
+    }
+
+    h1 {
+      margin: 0 0 0.5rem;
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      line-height: 1.1;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-headline {
+      margin: 0 0 1rem;
+      font-size: clamp(1.25rem, 3.5vw, 1.75rem);
+      line-height: 1.3;
+      font-weight: 400;
+      opacity: 0.95;
+    }
+
+    .hero-sub {
+      margin: 0;
+      font-size: clamp(1rem, 2.5vw, 1.15rem);
+      line-height: 1.5;
+      opacity: 0.9;
+    }
+
+    main {
+      display: block;
+    }
+
+    section {
+      padding: 4rem 1.5rem;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      margin: 0 0 1.25rem;
+      font-size: clamp(1.6rem, 4vw, 2.25rem);
+      line-height: 1.2;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    p {
+      margin: 0 0 1.5rem;
+    }
+
+    .about .container,
+    .rooms .container,
+    .location .container {
+      display: grid;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .section-image {
+      border-radius: 0.5rem;
+      overflow: hidden;
+    }
+
+    .section-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .features {
+      background: var(--muted);
+    }
+
+    .features-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .feature {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 1.75rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+
+    .feature h3 {
+      margin: 0 0 0.75rem;
+      font-size: 1.25rem;
+      line-height: 1.3;
+      font-weight: 600;
+    }
+
+    .feature p {
+      margin: 0;
+    }
+
+    .cta {
+      text-align: center;
+      background: var(--muted);
+    }
+
+    .cta .button {
+      display: inline-block;
+      padding: 0.9rem 1.75rem;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 0.35rem;
+      font-weight: 500;
+      transition: background 0.2s ease;
+    }
+
+    .cta .button:hover,
+    .cta .button:focus {
+      background: #005fa3;
+    }
+
+    footer {
+      background: #111;
+      color: #fff;
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+
+    footer a {
+      color: #fff;
+      text-decoration: underline;
+      text-underline-offset: 0.15em;
+    }
+
+    footer .contact {
+      font-size: 1.05rem;
+      margin-bottom: 1.5rem;
+    }
+
+    footer .meta {
+      font-size: 0.9rem;
+      opacity: 0.75;
+      margin-bottom: 0.5rem;
+    }
+
+    footer .attribution {
+      font-size: 0.85rem;
+      opacity: 0.7;
+      margin: 0;
+    }
+
+    @media (min-width: 768px) {
+      .about .container,
+      .rooms .container,
+      .location .container {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .features-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="img/0.jpg" alt="Ferienwohnungen Château A & B in Saas-Fee">
+    <div class="hero-content">
+      <h1>Château A & B Ferienwohnungen Saas Fee</h1>
+      <p class="hero-headline">Ferienwohnungen nahe Dorf und Pisten</p>
+      <p class="hero-sub">Helle, gut ausgestattete Apartments mit Spa-Bereich. Geeignet für Winter und Sommer.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="about">
+      <div class="container">
+        <div>
+          <h2>Willkommen bei Château A & B</h2>
+          <p>Château A & B Ferienwohnungen Saas Fee bietet helle, gut ausgestattete Apartments mit Spa, Sauna, Dampfbad und Fitnessraum im Untergeschoss. Die Lage ist ruhig und sowohl das Dorfzentrum als auch die Skipisten sind gut erreichbar. Gäste schätzen die Sauberkeit, die Ausstattung und die Betreuung durch Frau Karin. Die Ferienwohnungen sind für Familien und Paare geeignet.</p>
+        </div>
+        <div class="section-image">
+          <img src="img/1.jpg" alt="Helle, gut ausgestattete Apartments" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container">
+        <h2>Ausstattung & Highlights</h2>
+        <div class="features-grid">
+          <article class="feature">
+            <h3>Wellness im Haus</h3>
+            <p>Im Untergeschoss stehen Spa, Sauna, Dampfbad und Fitnessraum zur Verfügung. Ideal zur Entspannung nach aktiven Tagen.</p>
+          </article>
+          <article class="feature">
+            <h3>Gute Lage</h3>
+            <p>Die Apartments liegen nahe am Dorf und an den Pisten. So sind Wanderungen und Skitage bequem möglich.</p>
+          </article>
+          <article class="feature">
+            <h3>Ausstattung & Betreuung</h3>
+            <p>Die Wohnungen sind hell, sauber und gut eingerichtet. Gäste loben die freundliche Betreuung durch Frau Karin.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="rooms">
+      <div class="container">
+        <div>
+          <h2>Unsere Ferienwohnungen</h2>
+          <p>Die Apartments sind hell und gut ausgestattet. Gäste berichten von hochwertiger Einrichtung und praktischer Ausstattung. Verschiedene Größen bieten Platz für Familien oder Paare. Jede Wohnung ist individuell gestaltet und eignet sich für längere Aufenthalte.</p>
+        </div>
+        <div class="section-image">
+          <img src="img/2.jpg" alt="Apartments für Familien und Paare" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="location">
+      <div class="container">
+        <div>
+          <h2>Lage in Saas-Fee</h2>
+          <p>Château A & B liegt an der Haltenstrasse 27 in Saas-Fee. Das Dorfzentrum und die Skipisten sind schnell erreichbar. Die Umgebung eignet sich für Skifahren im Winter und Wandern im Sommer.</p>
+        </div>
+        <div class="section-image">
+          <img src="img/3.jpg" alt="Lage in Saas-Fee nahe Dorf und Pisten" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <h2>Jetzt Aufenthalt anfragen</h2>
+        <p>Kontaktieren Sie uns für weitere Informationen oder Buchungsanfragen. Wir beraten Sie gerne persönlich zu Ihrer Ferienwohnung.</p>
+        <a class="button" href="tel:0791744040">079 174 40 40 anrufen</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p class="contact">
+      <a href="https://maps.google.com/?cid=11442602122676465122&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA">Haltenstrasse 27, 3906 Saas-Fee, Schweiz</a>
+      ·
+      <a href="tel:0791744040">079 174 40 40</a>
+    </p>
+    <p class="meta">Built by TitanixTech — tools@titanixtech.com</p>
+    <p class="attribution">Fotos: Residence Château Ferienwohnungen Saas Fee</p>
+  </footer>
+
+</body>
+</html>
