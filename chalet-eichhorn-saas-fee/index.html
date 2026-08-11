@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chalet Eichhorn in Saas-Fee – Ihr Rückzugsort in den Bergen</title>
+  <meta name="description" content="Chalet Eichhorn, Tälli 10 in Saas-Fee. Kontaktieren Sie das Haus telefonisch für Informationen und Buchungen. Keine Website vorhanden.">
+  <style>
+    :root {
+      --bg: #f7f5f2;
+      --text: #2a2a2a;
+      --muted: #5c5c5c;
+      --accent: #3d5a4c;
+      --accent-light: #e8eeea;
+      --white: #ffffff;
+      --shadow: rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+      font-size: 17px;
+      line-height: 1.6;
+      color: var(--text);
+      background-color: var(--bg);
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover,
+    a:focus {
+      text-decoration: underline;
+    }
+
+    header,
+    section,
+    footer {
+      padding: 4rem 1.25rem;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      line-height: 1.15;
+      font-weight: 600;
+      color: var(--white);
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+      margin-bottom: 0.75rem;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+
+    p {
+      margin-bottom: 1rem;
+      color: var(--muted);
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 70vh;
+      display: flex;
+      align-items: flex-end;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .hero img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.15) 50%, rgba(0, 0, 0, 0) 100%);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 4rem 1.25rem;
+    }
+
+    .hero-headline {
+      font-size: 1.35rem;
+      font-weight: 500;
+      color: var(--white);
+      text-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-sub {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.92);
+      max-width: 520px;
+      text-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+
+    .feature-card {
+      background-color: var(--white);
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 20px var(--shadow);
+    }
+
+    .feature-card h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--accent);
+    }
+
+    .feature-card p {
+      font-size: 0.95rem;
+      margin-bottom: 0;
+    }
+
+    .section-image {
+      width: 100%;
+      border-radius: 12px;
+      margin-top: 1.5rem;
+      box-shadow: 0 4px 24px var(--shadow);
+    }
+
+    .cta {
+      text-align: center;
+      background-color: var(--accent-light);
+    }
+
+    .cta-phone {
+      display: inline-block;
+      margin-top: 1.25rem;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--accent);
+      padding: 0.75rem 1.5rem;
+      background-color: var(--white);
+      border-radius: 8px;
+      box-shadow: 0 4px 16px var(--shadow);
+    }
+
+    footer {
+      background-color: var(--text);
+      color: rgba(255, 255, 255, 0.8);
+      text-align: center;
+      font-size: 0.95rem;
+    }
+
+    footer p {
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 0.75rem;
+    }
+
+    footer a {
+      color: var(--white);
+      text-decoration: underline;
+    }
+
+    footer a:hover,
+    footer a:focus {
+      text-decoration: none;
+    }
+
+    @media (min-width: 768px) {
+      header,
+      section,
+      footer {
+        padding: 5rem 2rem;
+      }
+
+      .container {
+        max-width: 760px;
+      }
+
+      h1 {
+        font-size: 3.2rem;
+      }
+
+      h2 {
+        font-size: 1.9rem;
+      }
+
+      .hero-content {
+        padding: 5rem 2rem;
+      }
+
+      .hero-headline {
+        font-size: 1.6rem;
+      }
+
+      .hero-sub {
+        font-size: 1.1rem;
+      }
+
+      .feature-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <img src="img/0.jpg" alt="Chalet Eichhorn">
+    <div class="hero-content">
+      <h1>Chalet Eichhorn</h1>
+      <p class="hero-headline">Traditionelles Berghaus in ruhiger Lage</p>
+      <p class="hero-sub">Persönliche Atmosphäre und direkter Kontakt. Reservierungen sind ausschließlich telefonisch möglich.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="about">
+      <div class="container">
+        <h2>Über Chalet Eichhorn</h2>
+        <p>Das Chalet Eichhorn liegt in Saas-Fee am Tälli 10. Dieses Berghaus öffnet seine Türen samstags ab 16 Uhr. Eine eigene Website gibt es nicht, weshalb Interessierte das Haus nur schwer direkt finden oder online buchen können. Für alle Fragen oder Reservierungen steht ausschließlich die angegebene Telefonnummer zur Verfügung. Wer Wert auf persönlichen Kontakt legt, findet hier eine passende Unterkunft.</p>
+        <img class="section-image" src="img/1.jpg" alt="Über Chalet Eichhorn" loading="lazy">
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container">
+        <h2>Leistungen</h2>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <h3>Telefonische Buchung</h3>
+            <p>Reservierungen und Anfragen werden ausschließlich telefonisch entgegengenommen. So ist ein direkter Austausch möglich.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Samstags geöffnet</h3>
+            <p>Das Chalet ist nur samstags von 16:00 bis 24:00 Uhr geöffnet. An allen anderen Tagen bleibt das Haus geschlossen.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Zentrale Adresse</h3>
+            <p>Das Haus befindet sich an der Adresse Tälli 10 in 3906 Saas-Fee und ist gut erreichbar.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="rooms">
+      <div class="container">
+        <h2>Zimmer und Unterkunft</h2>
+        <p>Über die genaue Ausstattung oder Anzahl der Zimmer liegen keine Informationen vor. Da keine Website existiert, empfiehlt es sich, direkt telefonisch nach Details zur Unterkunft zu fragen.</p>
+        <img class="section-image" src="img/2.jpg" alt="Zimmer und Unterkunft" loading="lazy">
+      </div>
+    </section>
+
+    <section class="location">
+      <div class="container">
+        <h2>Lage in Saas-Fee</h2>
+        <p>Das Chalet Eichhorn befindet sich in Saas-Fee, einem bekannten Bergdorf im Schweizer Kanton Wallis. Die Lage am Tälli 10 bietet Zugang zu den umliegenden Alpenlandschaften.</p>
+        <img class="section-image" src="img/3.jpg" alt="Lage in Saas-Fee" loading="lazy">
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <h2>Kontakt und Buchung</h2>
+        <p>Für Informationen oder Reservierungen rufen Sie bitte direkt an. Da es keine Website gibt, ist dies der beste Weg, um alles zu erfahren.</p>
+        <a class="cta-phone" href="tel:+41768235351">076 823 53 51</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Tälli 10, 3906 Saas-Fee, Schweiz – Telefon: <a href="tel:+41768235351">076 823 53 51</a></p>
+      <p><a href="https://maps.google.com/?cid=3428655670826338055&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA">Auf Google Maps anzeigen</a></p>
+      <p>Fotos: Chalet Eichhorn</p>
+      <p>Built by TitanixTech — <a href="mailto:tools@titanixtech.com">tools@titanixtech.com</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>

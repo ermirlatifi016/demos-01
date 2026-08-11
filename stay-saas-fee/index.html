@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stay Saas-Fee in Saas-Fee – Apartmentvermietung</title>
+  <meta name="description" content="Duplex-Apartment für bis zu 10 Erwachsene und 2 Kleinkinder. Hochwertige Ausstattung, sauber und organisiert. In der Nähe des Zentrums von Saas-Fee.">
+  <style>
+    :root {
+      --bg: #f7f6f2;
+      --surface: #ffffff;
+      --text: #2b2b2b;
+      --muted: #5c5c5c;
+      --accent: #4a6b5a;
+      --accent-dark: #3a5547;
+      --white: #ffffff;
+      --shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+      --radius: 10px;
+      --max-width: 1120px;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+      font-size: 1.0625rem;
+      line-height: 1.6;
+      color: var(--text);
+      background-color: var(--bg);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease, color 0.2s ease;
+    }
+
+    a:hover, a:focus {
+      color: var(--accent-dark);
+      border-bottom-color: currentColor;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+    }
+
+    .section {
+      padding: 4rem 0;
+    }
+
+    h1, h2, p {
+      margin-top: 0;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 4.25rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-size: clamp(1.65rem, 3.5vw, 2.25rem);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      letter-spacing: -0.01em;
+    }
+
+    .lead {
+      font-size: clamp(1.15rem, 2.5vw, 1.45rem);
+      line-height: 1.45;
+      color: var(--muted);
+    }
+
+    .hero {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 70vh;
+      text-align: center;
+      color: var(--white);
+      overflow: hidden;
+    }
+
+    .hero__media {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+    }
+
+    .hero__media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.45) 100%);
+      z-index: -1;
+    }
+
+    .hero__content {
+      position: relative;
+      z-index: 1;
+      padding: 4rem 1.25rem;
+      max-width: 900px;
+    }
+
+    .hero__headline {
+      font-size: clamp(1.35rem, 3vw, 1.85rem);
+      font-weight: 400;
+      margin-bottom: 1rem;
+      text-shadow: 0 1px 8px rgba(0,0,0,0.35);
+    }
+
+    .hero__sub {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      max-width: 60ch;
+      margin: 0 auto;
+      text-shadow: 0 1px 6px rgba(0,0,0,0.35);
+    }
+
+    .two-col {
+      display: grid;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .two-col__image {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .two-col__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      aspect-ratio: 4 / 3;
+    }
+
+    .features__grid {
+      display: grid;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .feature {
+      background-color: var(--surface);
+      padding: 1.75rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .feature h3 {
+      font-size: 1.25rem;
+      margin: 0 0 0.5rem;
+      color: var(--accent-dark);
+    }
+
+    .feature p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .cta {
+      text-align: center;
+      background-color: var(--surface);
+    }
+
+    .cta__button {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 1rem 2rem;
+      background-color: var(--accent);
+      color: var(--white);
+      font-weight: 600;
+      border-radius: var(--radius);
+      border-bottom: none;
+    }
+
+    .cta__button:hover, .cta__button:focus {
+      background-color: var(--accent-dark);
+      color: var(--white);
+    }
+
+    .footer {
+      background-color: #252525;
+      color: #e8e8e8;
+      padding: 3rem 0;
+      text-align: center;
+    }
+
+    .footer a {
+      color: #cfe3d6;
+    }
+
+    .footer a:hover, .footer a:focus {
+      color: var(--white);
+    }
+
+    .footer__contact {
+      margin-bottom: 1.25rem;
+    }
+
+    .footer__attribution {
+      font-size: 0.95rem;
+      margin: 1.25rem 0 0.5rem;
+      color: #b0b0b0;
+    }
+
+    .footer__built {
+      font-size: 0.9rem;
+      color: #999;
+    }
+
+    @media (min-width: 768px) {
+      .two-col {
+        grid-template-columns: 1fr 1fr;
+        gap: 3.5rem;
+      }
+
+      .two-col--reverse .two-col__text {
+        order: 2;
+      }
+
+      .two-col--reverse .two-col__image {
+        order: 1;
+      }
+
+      .features__grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .section {
+        padding: 5.5rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="hero__media">
+      <img src="img/0.jpg" alt="Duplex-Apartment Stay Saas-Fee in Saas-Fee" loading="eager">
+    </div>
+    <div class="hero__overlay" aria-hidden="true"></div>
+    <div class="hero__content">
+      <h1>Stay Saas-Fee</h1>
+      <p class="hero__headline">Geräumiges Duplex-Apartment nahe dem Zentrum</p>
+      <p class="hero__sub">Platz für bis zu 10 Erwachsene und 2 Kleinkinder. Hochwertige Ausstattung und persönliche Betreuung vor Ort.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section about">
+      <div class="container two-col">
+        <div class="two-col__text">
+          <h2>Über Stay Saas-Fee</h2>
+          <p class="lead">Stay Saas-Fee bietet ein gepflegtes Duplex-Apartment in der Hannigstrasse. Gäste loben die hohe Qualität der Ausstattung und die Sauberkeit. Die Organisation erfolgt aus dem Vereinigten Königreich, während vor Ort persönliche Betreuung gewährleistet wird. Das Apartment liegt nahe dem Zentrum von Saas-Fee. Die Unterkunft eignet sich besonders für größere Gruppen, die Wert auf Komfort und Ordnung legen.</p>
+        </div>
+        <div class="two-col__image">
+          <img src="img/1.jpg" alt="Gepflegtes Duplex-Apartment in der Hannigstrasse" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="section features">
+      <div class="container">
+        <h2>Ausstattung &amp; Service</h2>
+        <div class="features__grid">
+          <article class="feature">
+            <h3>Viel Platz</h3>
+            <p>Das Duplex-Apartment bietet Platz für bis zu 10 Erwachsene und 2 Kleinkinder. Ideal für Familien oder Gruppen.</p>
+          </article>
+          <article class="feature">
+            <h3>Gepflegte Ausstattung</h3>
+            <p>Gäste schätzen die hochwertige Einrichtung und Sauberkeit. Alles ist gut organisiert und durchdacht ausgestattet.</p>
+          </article>
+          <article class="feature">
+            <h3>Persönliche Betreuung</h3>
+            <p>Die Organisation erfolgt aus dem Vereinigten Königreich. Vor Ort sorgt eine Ansprechperson für einen reibungslosen Ablauf.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section rooms">
+      <div class="container two-col two-col--reverse">
+        <div class="two-col__text">
+          <h2>Unser Duplex-Apartment</h2>
+          <p class="lead">Das Apartment bietet Raum für bis zu 10 Erwachsene und 2 Kleinkinder. Es überzeugt durch hochwertige Ausstattung, Sauberkeit und eine praktische Aufteilung. Die Unterkunft ist besonders für größere Gruppen geeignet.</p>
+        </div>
+        <div class="two-col__image">
+          <img src="img/2.jpg" alt="Duplex-Apartment mit hochwertiger Ausstattung für bis zu 10 Erwachsene und 2 Kleinkinder" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="section location">
+      <div class="container two-col">
+        <div class="two-col__text">
+          <h2>Lage in Saas-Fee</h2>
+          <p class="lead">Das Apartment befindet sich in der Hannigstrasse, nahe dem Zentrum von Saas-Fee. Die Umgebung bietet kurze Wege zu den Angeboten des Ortes und eine ruhige Wohnlage.</p>
+        </div>
+        <div class="two-col__image">
+          <img src="img/3.jpg" alt="Lage des Apartments in der Hannigstrasse nahe dem Zentrum von Saas-Fee" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta">
+      <div class="container">
+        <h2>Kontaktieren Sie uns</h2>
+        <p class="lead">Für Fragen oder Buchungen rufen Sie bitte an oder schreiben Sie uns. Persönliche Betreuung und direkte Kommunikation sind uns wichtig.</p>
+        <a class="cta__button" href="tel:07549948111">07549 948111 anrufen</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__contact">
+        <a href="https://maps.google.com/?cid=1825345160668885375&amp;g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA">Hannigstrasse, 3906 Saas-Fee, Switzerland</a>
+        · Tel: <a href="tel:07549948111">07549 948111</a>
+      </p>
+      <p class="footer__attribution">Fotos: Stay Saas-Fee</p>
+      <p class="footer__built">Built by TitanixTech — <a href="mailto:tools@titanixtech.com">tools@titanixtech.com</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hotel Alpenhof Saas-Almagell AG, Saas-Almagell</title>
+  <meta name="description" content="Gemütliche Zimmer mit Balkon, Restaurant, Sauna und Dampfbad. Gäste loben Lage und SaastalCard. Kontaktieren Sie das Hotel Alpenhof Saas-Almagell AG.">
+  <style>
+    :root {
+      --bg: #f8f6f2;
+      --text: #2d2d2d;
+      --accent: #6b7c5c;
+      --accent-dark: #55654a;
+      --muted: #8a7e72;
+      --light: #ffffff;
+      --shadow: rgba(0, 0, 0, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 17px;
+      line-height: 1.6;
+      color: var(--text);
+      background-color: var(--bg);
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease, color 0.2s ease;
+    }
+
+    a:hover {
+      color: var(--accent-dark);
+      border-bottom-color: var(--accent-dark);
+    }
+
+    h1, h2 {
+      font-weight: 500;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    h1 {
+      font-size: clamp(1.75rem, 5vw, 2.75rem);
+      color: var(--light);
+    }
+
+    h2 {
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      margin-bottom: 1rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero__image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(30, 35, 30, 0.45), rgba(30, 35, 30, 0.55));
+      z-index: 1;
+    }
+
+    .hero__content {
+      position: relative;
+      z-index: 2;
+      max-width: 760px;
+      padding: 2rem;
+      color: var(--light);
+    }
+
+    .hero__headline {
+      font-size: clamp(1.25rem, 3.5vw, 1.75rem);
+      font-weight: 400;
+      margin-top: 1rem;
+      color: var(--light);
+      opacity: 0.95;
+    }
+
+    .hero__sub {
+      font-size: clamp(1rem, 2.5vw, 1.125rem);
+      margin-top: 1.25rem;
+      opacity: 0.9;
+    }
+
+    section {
+      padding: 4.5rem 0;
+    }
+
+    section:nth-child(even) {
+      background-color: var(--light);
+    }
+
+    .split {
+      display: grid;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .split__image {
+      width: 100%;
+      border-radius: 4px;
+      box-shadow: 0 12px 40px var(--shadow);
+    }
+
+    .features__grid {
+      display: grid;
+      gap: 1.75rem;
+      margin-top: 2rem;
+    }
+
+    .feature {
+      background-color: var(--light);
+      padding: 2rem;
+      border-radius: 4px;
+      box-shadow: 0 8px 30px var(--shadow);
+    }
+
+    .feature h3 {
+      font-size: 1.125rem;
+      font-weight: 500;
+      color: var(--accent-dark);
+      margin-bottom: 0.75rem;
+    }
+
+    .feature p {
+      margin-bottom: 0;
+      color: var(--text);
+    }
+
+    .cta {
+      text-align: center;
+      background-color: var(--accent);
+      color: var(--light);
+    }
+
+    .cta h2 {
+      color: var(--light);
+    }
+
+    .cta p {
+      opacity: 0.95;
+    }
+
+    .cta__phone {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.9rem 2rem;
+      background-color: var(--light);
+      color: var(--accent-dark);
+      border-radius: 4px;
+      font-weight: 500;
+      border-bottom: none;
+    }
+
+    .cta__phone:hover {
+      background-color: var(--bg);
+      color: var(--accent-dark);
+    }
+
+    footer {
+      padding: 3rem 0;
+      background-color: #2d2d2d;
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 0.95rem;
+    }
+
+    footer a {
+      color: #b8c8aa;
+      border-bottom-color: transparent;
+    }
+
+    footer a:hover {
+      color: #d4e0c9;
+      border-bottom-color: #d4e0c9;
+    }
+
+    .footer__contact {
+      margin-bottom: 1.25rem;
+    }
+
+    .footer__built {
+      margin-top: 1.5rem;
+      opacity: 0.7;
+    }
+
+    .footer__attribution {
+      margin-top: 0.75rem;
+      opacity: 0.7;
+    }
+
+    @media (min-width: 768px) {
+      .split {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+      }
+
+      .split--reverse .split__text {
+        order: 2;
+      }
+
+      .split--reverse .split__media {
+        order: 1;
+      }
+
+      .features__grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      section {
+        padding: 6rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <img class="hero__image" src="img/0.jpg" alt="Erholung und Komfort in den Bergen">
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <h1>Hotel Alpenhof Saas-Almagell AG</h1>
+      <p class="hero__headline">Erholung und Komfort in den Bergen</p>
+      <p class="hero__sub">Gemütliche Zimmer, SaastalCard inklusive und eine entspannte Atmosphäre erwarten Sie in Saas-Almagell.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="about">
+      <div class="container split">
+        <div class="split__text">
+          <h2>Über das Hotel Alpenhof</h2>
+          <p>Das Hotel Alpenhof Saas-Almagell AG bietet gemütliche Zimmer mit Balkon und eine ungezwungene Atmosphäre. Gäste schätzen die SaastalCard, mit der Sie im Sommer freie Fahrten auf den Gondeln in den umliegenden Tälern genießen. Das Haus verfügt über ein Restaurant sowie Sauna und Dampfbad. Die Einrichtung ist nicht modern, aber viele Gäste loben das Preis-Leistungs-Verhältnis und die Sauberkeit der Zimmer.</p>
+        </div>
+        <div class="split__media">
+          <img class="split__image" src="img/1.jpg" alt="Über das Hotel Alpenhof" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container">
+        <h2>Ausstattung</h2>
+        <div class="features__grid">
+          <article class="feature">
+            <h3>SaastalCard inklusive</h3>
+            <p>Mit der SaastalCard nutzen Sie im Sommer die Gondeln in drei Tälern kostenfrei und entdecken die Region bequem.</p>
+          </article>
+          <article class="feature">
+            <h3>Balkonzimmer</h3>
+            <p>Viele Zimmer verfügen über einen Balkon. So können Sie die frische Bergluft und den Ausblick auf die Umgebung genießen.</p>
+          </article>
+          <article class="feature">
+            <h3>Restaurant vor Ort</h3>
+            <p>Im Hotel befindet sich ein Restaurant. Gäste berichten von Halbpension und einem Frühstück mit verschiedenen Speisen.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="rooms">
+      <div class="container split split--reverse">
+        <div class="split__text">
+          <h2>Zimmer und Suiten</h2>
+          <p>Die Zimmer sind einfach eingerichtet und verfügen meist über einen Balkon. Gäste berichten von komfortablen Betten und großzügigen Suiten. Die Ausstattung ist älter, wird jedoch als sauber beschrieben. Einige Gäste bemerken, dass die Bäder und Möbel nicht modernisiert wurden.</p>
+        </div>
+        <div class="split__media">
+          <img class="split__image" src="img/2.jpg" alt="Zimmer und Suiten" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="location">
+      <div class="container split">
+        <div class="split__text">
+          <h2>Lage in Saas-Almagell</h2>
+          <p>Das Hotel liegt an der Talstrasse 91 in Saas-Almagell. Direkt vor dem Haus gibt es Parkmöglichkeiten. Die Umgebung ist geprägt von Bergen und Tälern, ideal für Ausflüge und Wanderungen.</p>
+        </div>
+        <div class="split__media">
+          <a href="https://maps.google.com/?cid=7740350559300782897&amp;g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA" target="_blank" rel="noopener">
+            <img class="split__image" src="img/3.jpg" alt="Lage in Saas-Almagell" loading="lazy">
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <h2>Kontakt und Buchung</h2>
+        <p>Für aktuelle Informationen und Reservierungen rufen Sie bitte an oder schreiben Sie uns. Wir helfen Ihnen gern persönlich weiter.</p>
+        <a class="cta__phone" href="tel:0789205477">078 920 54 77 anrufen</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p class="footer__contact">
+        <a href="https://maps.google.com/?cid=7740350559300782897&amp;g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA" target="_blank" rel="noopener">Talstrasse 91, 3905 Saas-Almagell, Schweiz</a>,
+        <a href="tel:0789205477">Telefon: 078 920 54 77</a>
+      </p>
+      <p class="footer__attribution">Fotos: Maryna Irykova, Vali Fuior, Bi Ne</p>
+      <p class="footer__built">Built by TitanixTech — <a href="mailto:tools@titanixtech.com">tools@titanixtech.com</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>

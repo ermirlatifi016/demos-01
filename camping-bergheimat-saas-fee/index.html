@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Camping Bergheimat in Saas-Grund</title>
+  <meta name="description" content="Campingplatz mit Hallenbad und Wellnessbereich im Zentrum von Saas-Grund. 4,2 Sterne aus 31 Bewertungen. Nur Barzahlung.">
+  <style>
+    :root {
+      --bg: #f6f5f2;
+      --text: #1f2a24;
+      --muted: #5e6e66;
+      --accent: #3d6b5e;
+      --accent-light: #e8f0ed;
+      --white: #ffffff;
+      --shadow: 0 4px 24px rgba(0,0,0,0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
+      font-size: 17px;
+      line-height: 1.6;
+      color: var(--text);
+      background-color: var(--bg);
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      background-color: var(--white);
+    }
+
+    .hero {
+      position: relative;
+      background-color: var(--text);
+    }
+
+    .hero__media {
+      position: relative;
+      width: 100%;
+      height: 60vh;
+      min-height: 360px;
+      max-height: 720px;
+      overflow: hidden;
+    }
+
+    .hero__media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.9;
+    }
+
+    .hero__content {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 2rem;
+      background: linear-gradient(to top, rgba(31,42,36,0.72) 0%, rgba(31,42,36,0.18) 60%, transparent 100%);
+    }
+
+    .hero__content > * {
+      max-width: 900px;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero__headline {
+      font-size: clamp(1.25rem, 3vw, 1.75rem);
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 0.6rem;
+    }
+
+    .hero__sub {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: rgba(255,255,255,0.9);
+      max-width: 640px;
+    }
+
+    section {
+      padding: 4rem 1.5rem;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+
+    .split {
+      display: grid;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .split__text p:last-child {
+      margin-bottom: 0;
+    }
+
+    .split__image {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .features {
+      background-color: var(--white);
+    }
+
+    .feature-grid {
+      display: grid;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .feature-card {
+      background-color: var(--bg);
+      border-radius: 8px;
+      padding: 1.75rem;
+      box-shadow: var(--shadow);
+    }
+
+    .feature-card h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 0.6rem;
+    }
+
+    .feature-card p {
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    .cta {
+      background-color: var(--accent);
+      color: var(--white);
+      text-align: center;
+    }
+
+    .cta h2 {
+      color: var(--white);
+    }
+
+    .cta p {
+      color: rgba(255,255,255,0.92);
+      margin-bottom: 1.5rem;
+    }
+
+    .cta .tel {
+      display: inline-block;
+      background-color: var(--white);
+      color: var(--accent);
+      font-weight: 600;
+      padding: 0.9rem 1.8rem;
+      border-radius: 6px;
+      font-size: 1.1rem;
+    }
+
+    .cta .tel:hover {
+      background-color: var(--accent-light);
+      text-decoration: none;
+    }
+
+    footer {
+      background-color: var(--text);
+      color: rgba(255,255,255,0.85);
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+
+    footer p {
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 0.6rem;
+    }
+
+    footer a {
+      color: var(--white);
+      text-decoration: underline;
+    }
+
+    footer a:hover {
+      color: var(--accent-light);
+    }
+
+    .footer-attribution {
+      margin-top: 1.5rem;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.65);
+    }
+
+    @media (min-width: 768px) {
+      section {
+        padding: 5rem 2rem;
+      }
+
+      .split {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+      }
+
+      .split--reverse .split__text {
+        order: 2;
+      }
+
+      .split--reverse .split__image {
+        order: 1;
+      }
+
+      .feature-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <section class="hero">
+      <div class="hero__media">
+        <img src="img/0.jpg" alt="Camping Bergheimat in Saas-Grund">
+      </div>
+      <div class="hero__content">
+        <h1>Camping Bergheimat</h1>
+        <p class="hero__headline">Zentral gelegener Campingplatz im Dorf</p>
+        <p class="hero__sub">Mit Hallenbad, Wellnessbereich und kurzen Wegen zu Geschäften und Bushaltestelle.</p>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section class="about">
+      <div class="container split">
+        <div class="split__text">
+          <h2>Über Camping Bergheimat</h2>
+          <p>Camping Bergheimat liegt im Herzen von Saas-Grund. Gäste schätzen die zentrale Lage, das Hallenbad und den Wellnessbereich gegen Aufpreis. Die Stellplätze sind kompakt und der Platz ist übersichtlich. Barzahlung ist erforderlich. Die Kommunikation und Buchung kann herausfordernd sein, wie einige Gäste berichten. Ein Gemeinschaftsraum ist nicht immer verfügbar. Insgesamt bewerten 31 Gäste den Platz mit durchschnittlich 4,2 Sternen.</p>
+        </div>
+        <div class="split__image">
+          <img src="img/1.jpg" alt="Hallenbad und Wellnessbereich" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container">
+        <h2>Ausstattung</h2>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <h3>Hallenbad vor Ort</h3>
+            <p>Der Campingplatz verfügt über ein Hallenbad, das den Gästen zur Verfügung steht. Die Nutzung ist im Angebot enthalten.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Wellnessbereich</h3>
+            <p>Ein Wellnessbereich ist vorhanden und kann gegen einen Aufpreis genutzt werden. Gäste berichten von entspannenden Möglichkeiten.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Im Dorfzentrum</h3>
+            <p>Die Lage im Zentrum von Saas-Grund bietet kurze Wege zu Bushaltestelle und Geschäften. Alles ist fußläufig erreichbar.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="rooms">
+      <div class="container split split--reverse">
+        <div class="split__text">
+          <h2>Stellplätze und Ausstattung</h2>
+          <p>Die Stellplätze auf Camping Bergheimat sind eher klein und dicht beieinander. Es gibt keine klar ausgewiesenen Gemeinschaftsbereiche. Gäste berichten, dass Privatsphäre begrenzt ist. Für Aufenthalte ist eine Barzahlung erforderlich.</p>
+        </div>
+        <div class="split__image">
+          <img src="img/2.jpg" alt="Stellplätze auf dem Campingplatz" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="location">
+      <div class="container split">
+        <div class="split__text">
+          <h2>Mitten in Saas-Grund</h2>
+          <p>Der Campingplatz befindet sich direkt im Dorfzentrum von Saas-Grund. Bushaltestelle und Einkaufsmöglichkeiten sind in wenigen Minuten zu Fuß erreichbar. Die Umgebung ist geprägt von alpinem Dorfleben.</p>
+        </div>
+        <div class="split__image">
+          <img src="img/3.jpg" alt="Dorfzentrum Saas-Grund" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <h2>Kontakt und Reservierung</h2>
+        <p>Für Anfragen oder Reservierungen empfiehlt sich ein Anruf. Da die Kommunikation per E-Mail eingeschränkt ist, erreichen Sie den Platz am besten telefonisch.</p>
+        <a class="tel" href="tel:0279571839">027 957 18 39 anrufen</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      <a href="https://maps.google.com/?cid=18012136067359149668&amp;g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA">3910 Saas-Grund, Switzerland</a>
+      · Tel. <a href="tel:0279571839">027 957 18 39</a>
+    </p>
+    <p class="footer-attribution">Fotos: Marisagir, Jan Felkl, Mark Gottfried</p>
+    <p class="footer-attribution">Built by TitanixTech — tools@titanixtech.com</p>
+  </footer>
+
+</body>
+</html>

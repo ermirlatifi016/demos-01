@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alpenhotel Rodania, Saas-Grund – Unterkunft im Saastal</title>
+  <meta name="description" content="Alpenhotel Rodania in Saas-Grund bietet einfache Zimmer. Bewertungen erwähnen kleine Räume und freundliches Personal. Kontaktieren Sie uns telefonisch.">
+  <style>
+    :root {
+      --bg: #f7f5f2;
+      --paper: #ffffff;
+      --text: #2c2c2c;
+      --muted: #6b6b6b;
+      --accent: #5f6f52;
+      --accent-dark: #4a5a40;
+      --rule: #e3e0db;
+      --shadow: rgba(0, 0, 0, 0.06);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 1.0625rem;
+      line-height: 1.6;
+      color: var(--text);
+      background-color: var(--bg);
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover,
+    a:focus {
+      color: var(--accent-dark);
+      text-decoration: underline;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 72rem;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+
+    /* Hero */
+    .hero {
+      background-color: var(--paper);
+    }
+
+    .hero img {
+      width: 100%;
+      height: 60vh;
+      min-height: 18rem;
+      max-height: 32rem;
+      object-fit: cover;
+    }
+
+    .hero-content {
+      padding: 3.5rem 1.5rem 4rem;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0 0 0.75rem;
+      font-size: clamp(1.75rem, 5vw, 2.75rem);
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      color: var(--text);
+    }
+
+    .hero-headline {
+      margin: 0 0 1rem;
+      font-size: clamp(1.25rem, 3vw, 1.625rem);
+      font-weight: 400;
+      color: var(--accent);
+    }
+
+    .hero-sub {
+      margin: 0 auto;
+      max-width: 42rem;
+      font-size: 1.125rem;
+      color: var(--muted);
+    }
+
+    /* Sections */
+    section {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+
+    section:nth-child(even) {
+      background-color: var(--paper);
+    }
+
+    h2 {
+      margin: 0 0 1.25rem;
+      font-size: clamp(1.5rem, 3.5vw, 2rem);
+      font-weight: 500;
+      line-height: 1.3;
+      color: var(--text);
+    }
+
+    p {
+      margin: 0 0 1.25rem;
+    }
+
+    section img {
+      width: 100%;
+      height: auto;
+      margin-top: 2rem;
+      border-radius: 0.25rem;
+      box-shadow: 0 0.75rem 2rem var(--shadow);
+    }
+
+    /* Features */
+    .features {
+      background-color: var(--bg);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .card {
+      padding: 1.75rem;
+      background-color: var(--paper);
+      border: 1px solid var(--rule);
+      border-radius: 0.25rem;
+    }
+
+    .card h3 {
+      margin: 0 0 0.75rem;
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    /* CTA */
+    .cta {
+      text-align: center;
+      background-color: var(--paper);
+    }
+
+    .cta-button {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 1rem 2rem;
+      font-size: 1.0625rem;
+      font-weight: 500;
+      color: #fff;
+      background-color: var(--accent);
+      border-radius: 0.25rem;
+      text-decoration: none;
+    }
+
+    .cta-button:hover,
+    .cta-button:focus {
+      background-color: var(--accent-dark);
+      color: #fff;
+      text-decoration: none;
+    }
+
+    /* Footer */
+    footer {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+      text-align: center;
+      background-color: #edeae5;
+      color: var(--muted);
+      font-size: 0.9375rem;
+    }
+
+    footer p {
+      margin: 0 0 0.75rem;
+    }
+
+    footer a {
+      color: var(--accent-dark);
+    }
+
+    /* Tablet and up */
+    @media (min-width: 768px) {
+      .hero-content {
+        padding-top: 5rem;
+        padding-bottom: 5.5rem;
+      }
+
+      section {
+        padding-top: 5.5rem;
+        padding-bottom: 5.5rem;
+      }
+
+      .cards {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .about .container,
+      .rooms .container,
+      .location .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+      }
+
+      .about .container img,
+      .rooms .container img,
+      .location .container img {
+        margin-top: 0;
+      }
+
+      .about .text,
+      .rooms .text,
+      .location .text {
+        order: 1;
+      }
+
+      .about .container img,
+      .rooms .container img,
+      .location .container img {
+        order: 2;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <img src="img/0.jpg" alt="Alpenhotel Rodania in Saas-Grund">
+    <div class="hero-content">
+      <h1>Alpenhotel Rodania, Saas-Grund, Visp - Valais</h1>
+      <p class="hero-headline">Einfache Unterkunft im Saastal</p>
+      <p class="hero-sub">Übernachten Sie nahe Saas-Fee. Persönlicher Kontakt und grundlegende Ausstattung erwarten Sie in Saas-Grund.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="about">
+      <div class="container">
+        <div class="text">
+          <h2>Über Alpenhotel Rodania</h2>
+          <p>Das Alpenhotel Rodania liegt an der Saastalstrasse in Saas-Grund. Gäste berichten von einfachen Zimmern und einem funktionalen Aufenthalt, der besonders bei Gruppen und Schulklassen genutzt wird. Bewertungen loben gelegentlich das Personal, während andere Gäste die Zimmergröße und die Qualität des Essens kritisieren. Das Haus verfügt über keinen eigenen Internetauftritt.</p>
+        </div>
+        <img src="img/1.jpg" alt="Saastalstrasse in Saas-Grund" loading="lazy">
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container">
+        <div class="cards">
+          <article class="card">
+            <h3>Zentrale Lage</h3>
+            <p>Das Hotel befindet sich direkt an der Saastalstrasse, unweit von Saas-Fee und den umliegenden Bergen.</p>
+          </article>
+          <article class="card">
+            <h3>Für Gruppen geeignet</h3>
+            <p>Das Haus wird häufig von Schulklassen und größeren Gruppen für Aufenthalte, zum Beispiel Skireisen, genutzt.</p>
+          </article>
+          <article class="card">
+            <h3>Persönlicher Kontakt</h3>
+            <p>Für Informationen und Buchungen steht Ihnen das Team telefonisch zur Verfügung. Es gibt keine eigene Website.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="rooms">
+      <div class="container">
+        <div class="text">
+          <h2>Zimmer im Überblick</h2>
+          <p>Gäste beschreiben die Zimmer als klein und einfach eingerichtet. Mehrere Betten mit unterschiedlichen Rahmen und Größen sind möglich. Die Badezimmer werden als sehr kompakt wahrgenommen. Einzelne Bewertungen erwähnen Sauberkeitsmängel.</p>
+        </div>
+        <img src="img/2.jpg" alt="Einfache Zimmer" loading="lazy">
+      </div>
+    </section>
+
+    <section class="location">
+      <div class="container">
+        <div class="text">
+          <h2>Ihre Lage in Saas-Grund</h2>
+          <p>Das Alpenhotel Rodania liegt an der Saastalstrasse 76 in Saas-Grund. Die Umgebung ist geprägt von den Bergen des Saastals und der Nähe zu Saas-Fee. Die Region ist bekannt für Wintersport und Wanderungen.</p>
+        </div>
+        <img src="img/3.jpg" alt="Saastalstrasse 76, 3910 Saas-Grund" loading="lazy">
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <h2>Kontaktieren Sie uns direkt</h2>
+        <p>Für Anfragen oder Buchungen rufen Sie bitte an. So erhalten Sie persönliche Auskünfte zu Verfügbarkeit und Konditionen.</p>
+        <a href="tel:0279572423" class="cta-button">027 957 24 23</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p><a href="https://maps.google.com/?cid=6208830946640554822&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA">Saastalstrasse 76, 3910 Saas-Grund, Schweiz</a> – Tel: <a href="tel:0279572423">027 957 24 23</a></p>
+      <p>Fotos: Radek Uldrych, Kees van der Hel, Verónica R. Wong</p>
+      <p>Built by TitanixTech — tools@titanixtech.com</p>
+    </div>
+  </footer>
+</body>
+</html>

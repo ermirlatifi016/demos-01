@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hotel-Restaurant Bärgsunnu, Saas-Grund</title>
+  <meta name="description" content="Herzlich im Saastal. Schlichte Zimmer, Restaurant, Garten und Lounge. Bus nach Saas-Fee in der Nähe. Telefon: 027 957 25 18.">
+  <style>
+    :root {
+      --white: #ffffff;
+      --black: #000000;
+      --near-black: #111111;
+      --accent: #ceb210;
+      --accent-vivid: #ff6900;
+      --light: #eeeeee;
+      --max-width: 1100px;
+      --radius: 4px;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+      font-size: 17px;
+      line-height: 1.6;
+      color: var(--near-black);
+      background-color: var(--white);
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    a {
+      color: var(--near-black);
+      text-decoration: underline;
+      text-decoration-color: var(--accent);
+      text-underline-offset: 3px;
+    }
+
+    a:hover, a:focus {
+      color: var(--accent-vivid);
+    }
+
+    h1, h2, p {
+      margin: 0;
+    }
+
+    section {
+      padding: 4rem 1.25rem;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      min-height: 80vh;
+      display: flex;
+      align-items: flex-end;
+      padding: 0;
+      color: var(--white);
+      background-color: var(--near-black);
+      overflow: hidden;
+    }
+
+    .hero img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.85;
+      z-index: 1;
+    }
+
+    .hero-overlay {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      padding: 5rem 1.25rem 3rem;
+      background: linear-gradient(to top, rgba(17,17,17,0.85) 0%, rgba(17,17,17,0.4) 60%, transparent 100%);
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 6vw, 3.6rem);
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-headline {
+      font-size: clamp(1.25rem, 3.5vw, 1.9rem);
+      font-weight: 400;
+      line-height: 1.35;
+      margin-bottom: 1rem;
+      max-width: 700px;
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      max-width: 620px;
+      opacity: 0.95;
+    }
+
+    /* Section titles */
+    h2 {
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      font-weight: 500;
+      line-height: 1.25;
+      margin-bottom: 1rem;
+      letter-spacing: -0.01em;
+    }
+
+    .section-lead {
+      font-size: 1.1rem;
+      max-width: 720px;
+      margin-bottom: 2rem;
+      color: #444;
+    }
+
+    /* About */
+    .about {
+      background-color: var(--white);
+    }
+
+    .about img {
+      width: 100%;
+      border-radius: var(--radius);
+      margin-top: 2.5rem;
+    }
+
+    /* Features */
+    .features {
+      background-color: var(--light);
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .feature-card {
+      background-color: var(--white);
+      padding: 1.75rem;
+      border-radius: var(--radius);
+      border-top: 3px solid var(--accent);
+    }
+
+    .feature-card h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin: 0 0 0.6rem;
+    }
+
+    .feature-card p {
+      color: #444;
+    }
+
+    /* Rooms */
+    .rooms {
+      background-color: var(--white);
+    }
+
+    .rooms img {
+      width: 100%;
+      border-radius: var(--radius);
+      margin-top: 2.5rem;
+    }
+
+    /* Location */
+    .location {
+      background-color: var(--near-black);
+      color: var(--white);
+    }
+
+    .location .section-lead {
+      color: #ccc;
+    }
+
+    .location img {
+      width: 100%;
+      border-radius: var(--radius);
+      margin-top: 2.5rem;
+      opacity: 0.95;
+    }
+
+    /* CTA */
+    .cta {
+      background-color: var(--white);
+      text-align: left;
+    }
+
+    .cta-phone {
+      display: inline-block;
+      margin-top: 1.25rem;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--near-black);
+      text-decoration: none;
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 2px;
+    }
+
+    .cta-phone:hover, .cta-phone:focus {
+      color: var(--accent-vivid);
+      border-bottom-color: var(--accent-vivid);
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--near-black);
+      color: #aaa;
+      padding: 3rem 1.25rem;
+      font-size: 0.95rem;
+    }
+
+    footer a {
+      color: #ddd;
+      text-decoration-color: var(--accent);
+    }
+
+    footer a:hover, footer a:focus {
+      color: var(--white);
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .footer-main {
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-main p {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-attribution {
+      border-top: 1px solid #333;
+      padding-top: 1.25rem;
+      margin-top: 1.5rem;
+      color: #888;
+      line-height: 1.55;
+    }
+
+    .footer-attribution p {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Responsive */
+    @media (min-width: 768px) {
+      section {
+        padding: 5rem 2rem;
+      }
+
+      .hero-overlay {
+        padding: 6rem 2rem 4rem;
+      }
+
+      .feature-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .about .container,
+      .rooms .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+      }
+
+      .about img,
+      .rooms img {
+        margin-top: 0;
+      }
+
+      .about-text,
+      .rooms-text {
+        order: 1;
+      }
+
+      .about-img,
+      .rooms-img {
+        order: 2;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <img src="img/0.jpg" alt="Aussenansicht des Hotel-Restaurant Bärgsunnu in Saas-Grund">
+    <div class="hero-overlay">
+      <div class="container">
+        <h1>Hotel-Restaurant Bärgsunnu</h1>
+        <p class="hero-headline">Familiäre Gastlichkeit im Saastal erleben</p>
+        <p class="hero-sub">Schlichte, saubere Zimmer, großzügige Küche und freundlicher Service. Ideal für Erholung nach einem Tag in den Bergen.</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="about" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="about-text">
+          <h2 id="about-heading">Über das Hotel-Restaurant Bärgsunnu</h2>
+          <p class="section-lead">Das Hotel-Restaurant Bärgsunnu liegt im Herzen von Saas-Grund. Gäste schätzen die großzügigen Portionen, das freundliche Personal und das familiäre Ambiente. Die Zimmer sind einfach, aber sauber und bieten alles Notwendige für einen angenehmen Aufenthalt. Im hellen Speisesaal genießen Sie Frühstück vom Buffet und ein Abendessen in vier Gängen. Die Lounge, der Garten mit Grillmöglichkeiten und die Nähe zum Bus nach Saas-Fee runden das Angebot ab.</p>
+        </div>
+        <div class="about-img">
+          <img src="img/1.jpg" alt="Helles Restaurant mit gedeckten Tischen und Bergblick" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="features" aria-labelledby="features-heading">
+      <div class="container">
+        <h2 id="features-heading">Das erwartet Sie</h2>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <h3>Großzügige Küche</h3>
+            <p>Im Restaurant werden herzhafte Speisen in großzügigen Portionen serviert. Frühstück und Abendessen werden im hellen Speisesaal angeboten.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Familiäre Atmosphäre</h3>
+            <p>Gäste fühlen sich wie bei einer traditionellen Schweizer Familie. Freundlicher Service und gesellige Hotelbar laden zum Verweilen ein.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Praktische Lage</h3>
+            <p>Die Unterkunft liegt nahe der Bushaltestelle nach Saas-Fee. Idealer Ausgangspunkt für Aktivitäten im Saastal und Umgebung.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="rooms" aria-labelledby="rooms-heading">
+      <div class="container">
+        <div class="rooms-text">
+          <h2 id="rooms-heading">Schlichte und saubere Zimmer</h2>
+          <p class="section-lead">Die Zimmer sind einfach eingerichtet und sauber. Einige verfügen über Küchen. Alles Nötige für einen angenehmen Aufenthalt ist vorhanden. Gäste loben das gute WLAN.</p>
+        </div>
+        <div class="rooms-img">
+          <img src="img/2.jpg" alt="Einfach eingerichtetes, sauberes Hotelzimmer" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="location" aria-labelledby="location-heading">
+      <div class="container">
+        <h2 id="location-heading">Im Herzen von Saas-Grund</h2>
+        <p class="section-lead">Das Hotel befindet sich in Tamatten, Saas-Grund. In der Nähe liegt die Bushaltestelle Richtung Saas-Fee. Die Umgebung bietet Zugang zu den Bergen und ist ideal für Ausflüge.</p>
+        <img src="img/3.jpg" alt="Berglandschaft in der Umgebung von Saas-Grund" loading="lazy">
+      </div>
+    </section>
+
+    <section class="cta" aria-labelledby="cta-heading">
+      <div class="container">
+        <h2 id="cta-heading">Kontaktieren Sie uns</h2>
+        <p class="section-lead">Für Anfragen zu Zimmern oder Restaurant steht Ihnen das Team gerne zur Verfügung. Rufen Sie an oder schreiben Sie, wenn Sie familiäre Gastlichkeit suchen.</p>
+        <a class="cta-phone" href="tel:0279572518">Tel. 027 957 25 18</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-main">
+        <p><strong>Hotel-Restaurant Bärgsunnu</strong></p>
+        <p><a href="https://maps.google.com/?cid=9977761329826271370&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA" target="_blank" rel="noopener noreferrer">Tamatten, 3910 Saas-Grund, Switzerland</a></p>
+        <p>Tel. <a href="tel:0279572518">027 957 25 18</a></p>
+      </div>
+      <div class="footer-attribution">
+        <p>Fotos: Gapion Daniel, Michael Sauter, Julien Gaspoz (Photographe), Francisco Javier Vazquez</p>
+        <p>Built by TitanixTech — <a href="mailto:tools@titanixtech.com">tools@titanixtech.com</a></p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
