@@ -1,301 +1,182 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Monte Rosa - Ferienwohnungen - Saas-Grund</title>
-  <meta name="description" content="Ferienwohnungen im umgebauten Hotel nahe Skiliften. Hunde und Katzen willkommen. Monte Rosa, Saas-Grund, Saastalstrasse 39.">
-  <style>
-    :root {
-      --bg: #fcfcfa;
-      --bg-warm: #f5f4ef;
-      --text: #2b2b2b;
-      --text-muted: #555;
-      --accent: #7a8b6e;
-      --accent-dark: #5f6e55;
-      --white: #ffffff;
-      --shadow: rgba(0, 0, 0, 0.06);
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      background-color: var(--bg);
-      color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      font-size: 1.0625rem;
-      line-height: 1.6;
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    a {
-      color: var(--accent-dark);
-      text-decoration: underline;
-      text-underline-offset: 0.15em;
-    }
-
-    a:hover,
-    a:focus {
-      color: var(--text);
-    }
-
-    .container {
-      width: 100%;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 1.25rem;
-    }
-
-    h1, h2, h3 {
-      line-height: 1.25;
-      margin: 0 0 0.75rem;
-    }
-
-    h1 {
-      font-size: clamp(1.75rem, 6vw, 3rem);
-      font-weight: 600;
-    }
-
-    h2 {
-      font-size: clamp(1.5rem, 4vw, 2.25rem);
-      font-weight: 500;
-    }
-
-    h3 {
-      font-size: 1.25rem;
-      font-weight: 600;
-    }
-
-    p {
-      margin: 0 0 1rem;
-    }
-
-    /* Hero */
-    .hero {
-      position: relative;
-      min-height: 85vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: var(--white);
-      overflow: hidden;
-    }
-
-    .hero img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -2;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.25) 100%);
-      z-index: -1;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      padding: 2rem 1rem;
-    }
-
-    .hero-headline {
-      font-size: clamp(1.25rem, 5vw, 2rem);
-      font-weight: 400;
-      margin: 1rem 0 1.25rem;
-    }
-
-    .hero-sub {
-      font-size: clamp(1rem, 2.5vw, 1.25rem);
-      max-width: 40ch;
-      margin: 0 auto;
-      opacity: 0.95;
-    }
-
-    /* Sections */
-    section {
-      padding: 4rem 0;
-    }
-
-    section img {
-      margin-top: 1.75rem;
-      border-radius: 4px;
-    }
-
-    .features {
-      background-color: var(--bg-warm);
-    }
-
-    .features-grid {
-      display: grid;
-      gap: 1.5rem;
-      margin-top: 1.5rem;
-    }
-
-    .card {
-      background-color: var(--white);
-      padding: 1.75rem;
-      border-radius: 6px;
-      border-left: 4px solid var(--accent);
-      box-shadow: 0 2px 12px var(--shadow);
-    }
-
-    .card p {
-      margin-bottom: 0;
-      color: var(--text-muted);
-    }
-
-    /* CTA */
-    .cta {
-      background-color: var(--accent);
-      color: var(--white);
-      text-align: center;
-    }
-
-    .cta h2 {
-      color: var(--white);
-    }
-
-    .cta p {
-      max-width: 55ch;
-      margin: 0 auto 1.75rem;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 0.875rem 1.75rem;
-      background-color: var(--white);
-      color: var(--accent-dark);
-      font-weight: 600;
-      border-radius: 4px;
-      text-decoration: none;
-    }
-
-    .button:hover,
-    .button:focus {
-      background-color: var(--bg-warm);
-      color: var(--text);
-    }
-
-    /* Footer */
-    footer {
-      background-color: #2b2b2b;
-      color: #e8e8e8;
-      padding: 3rem 0;
-      text-align: center;
-    }
-
-    footer a {
-      color: #c5d4b7;
-    }
-
-    footer a:hover,
-    footer a:focus {
-      color: var(--white);
-    }
-
-    footer p {
-      margin: 0 0 0.75rem;
-    }
-
-    @media (min-width: 768px) {
-      .features-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <header class="hero">
-    <img src="img/0.jpg" alt="Ferienwohnungen Monte Rosa in Saas-Grund">
-    <div class="container hero-content">
-      <h1>Monte Rosa - Ferienwohnungen - Appartements</h1>
-      <p class="hero-headline">Ferienwohnungen für Mensch und Tier</p>
-      <p class="hero-sub">Hunde und Katzen willkommen. Neue Küchen, ruhige Lage nahe Lifte und Einkaufsmöglichkeiten.</p>
-    </div>
-  </header>
-
-  <main>
-
-    <section class="about">
-      <div class="container">
-        <h2>Willkommen im Monte Rosa</h2>
-        <p>Monte Rosa - Ferienwohnungen - Appartements befindet sich in Saas-Grund an der Saastalstrasse 39. Das frühere Hotel wurde in größere, helle Ferienwohnungen umgebaut. Gäste loben die ruhige Atmosphäre, die hilfsbereite Leitung durch Philippe Oggier und die unkomplizierte Aufnahme von Hunden und Katzen. Die Küchen sind neu und gut ausgestattet, einige Bäder sind älteren Datums, aber gepflegt. Einkaufsmöglichkeiten und Skilifte sind in wenigen Minuten erreichbar.</p>
-        <img src="img/1.jpg" alt="Helle Ferienwohnung mit moderner Küche im Monte Rosa" loading="lazy">
-      </div>
-    </section>
-
-    <section class="features">
-      <div class="container">
-        <div class="features-grid">
-          <article class="card">
-            <h3>Haustiere erlaubt</h3>
-            <p>Hunde und Katzen sind ausdrücklich willkommen. Viele Gäste reisen mit ihren Vierbeinern an und fühlen sich gut aufgehoben.</p>
-          </article>
-          <article class="card">
-            <h3>Moderne Küchen</h3>
-            <p>Die Küchen in den Ferienwohnungen sind neu und umfassend ausgestattet. Hier lässt sich bequem für mehrere Personen kochen.</p>
-          </article>
-          <article class="card">
-            <h3>Zentrale Lage</h3>
-            <p>Die Unterkunft liegt nahe an Skiliften, Bushaltestelle und Einkaufsmöglichkeiten. Alles ist zu Fuß schnell erreichbar.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="rooms">
-      <div class="container">
-        <h2>Ferienwohnungen im Überblick</h2>
-        <p>Die ehemaligen Hotelzimmer wurden zu größeren Appartements umgebaut. Die Wohnungen verfügen über moderne Küchen und saubere, teils ältere Bäder. Die Räume sind gepflegt und bieten Platz für Gruppen und Familien.</p>
-        <img src="img/2.jpg" alt="Gemütlicher Wohnraum im Monte Rosa Appartement" loading="lazy">
-      </div>
-    </section>
-
-    <section class="location">
-      <div class="container">
-        <h2>Ihre Lage in Saas-Grund</h2>
-        <p>Monte Rosa liegt an der Saastalstrasse 39, nahe den Skiliften und der Busstation. Einkaufsmöglichkeiten und die Bahn nach Kreuzboden sind wenige Gehminuten entfernt.</p>
-        <img src="img/3.jpg" alt="Saas-Grund mit Skiliften in der Nähe der Monte Rosa Ferienwohnungen" loading="lazy">
-      </div>
-    </section>
-
-    <section class="cta">
-      <div class="container">
-        <h2>Jetzt Kontakt aufnehmen</h2>
-        <p>Sie suchen eine Unterkunft mit Hund oder Katze in Saas-Grund? Rufen Sie an oder schreiben Sie, um Ihren Aufenthalt persönlich zu besprechen.</p>
-        <a class="button" href="tel:0279577080">027 957 70 80 anrufen</a>
-      </div>
-    </section>
-
-  </main>
-
-  <footer>
-    <div class="container">
-      <p><a href="https://maps.google.com/?cid=13302995265455173714&amp;g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA">Innere, Saastalstrasse 39, 3910 Saas-Grund, Schweiz</a> – Telefon: <a href="tel:0279577080">027 957 70 80</a></p>
-      <p>Fotos: Monte Rosa - Ferienwohnungen - Appartements - Natur, Ruhe, Entspannung, Světlana Germekova</p>
-      <p>Built by TitanixTech — tools@titanixtech.com</p>
-    </div>
-  </footer>
-
-</body>
-</html>
+<!doctype html>
+<html lang="de" data-motion="subtle" data-pack="royella"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" as="image" href="img/0.jpg"/><title>Monte Rosa - Ferienwohnungen - Saas-Grund</title><meta name="description" content="Ferienwohnungen im umgebauten Hotel nahe Skiliften. Hunde und Katzen willkommen. Monte Rosa, Saas-Grund, Saastalstrasse 39."/><meta name="theme-color" content="#FFFFFF"/><meta property="og:title" content="Monte Rosa - Ferienwohnungen - Saas-Grund"/><meta property="og:description" content="Ferienwohnungen im umgebauten Hotel nahe Skiliften. Hunde und Katzen willkommen. Monte Rosa, Saas-Grund, Saastalstrasse 39."/><meta property="og:type" content="website"/><meta property="og:image" content="https://ermirlatifi016.github.io/demos-01/monte-rosa-ferienwohnungen-appartements-saas-fee/img/0.jpg"/><link rel="canonical" href="https://ermirlatifi016.github.io/demos-01/monte-rosa-ferienwohnungen-appartements-saas-fee/"/><style>:root{--ground:#FFFFFF;--ink:#1E1E1E;--dim:#616161;--hairline:#E8E8E8;--warm:#F8F6F3;--dark:#1E1E1E;--darker:#161616;--card:#272727;--dark-dim:#ACACAC;--dark-hairline:#424242;--accent:#C19D68;--display:"Cormorant Garamond", ui-serif, Garamond, Georgia, serif;--body:Lora, ui-serif, Georgia, "Times New Roman", serif;--gutter:20px;--section:120px;--radius:12px}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--body);font-size:16px;line-height:26px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden}
+img{display:block;max-width:100%;object-fit:cover}
+a{color:inherit;text-decoration:none}
+p{margin:0}
+ul{list-style:none;margin:0;padding:0}
+/* The centred container: 1330px at 1920, stepping at the reference
+   breakpoints. Unlike bureau this pack HAS a max width and uses it. */
+.ctr{width:100%;margin:0 auto;padding:0 var(--gutter)}
+@media (min-width:576px){.ctr{max-width:540px}}
+@media (min-width:768px){.ctr{max-width:720px}}
+@media (min-width:992px){.ctr{max-width:960px}}
+@media (min-width:1200px){.ctr{max-width:1140px}}
+@media (min-width:1400px){.ctr{max-width:1330px}}
+section{padding:var(--section) 0}
+@media (max-width:767.98px){section{padding:80px 0}}
+/* Everything is a serif. Cormorant shouts, Lora speaks. */
+h1,h2,h3,h4{margin:0;font-family:var(--display);font-weight:600}
+.t-hero{font-size:60px;line-height:70px}
+.t-title{font-size:38px;line-height:52px;text-transform:uppercase}
+.t-card{font-size:28px;line-height:26px}
+.t-stat{font-size:70px;line-height:1;font-weight:500;color:var(--accent);font-variant-numeric:tabular-nums}
+.t-num{font-family:var(--display);font-size:40px;line-height:1;font-weight:400;color:var(--accent);font-variant-numeric:tabular-nums}
+.label{font-family:var(--display);font-size:14px;line-height:26px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--accent)}
+.body{font-family:var(--body);color:var(--dim)}
+.body + .body{margin-top:1em}
+@media (max-width:767.98px){
+  body{font-size:14px}
+  .t-hero{font-size:48px;line-height:48px}
+  .t-title{font-size:30px;line-height:42px}
+  .t-card{font-size:24px}
+  .t-stat{font-size:48px}
+}
+/* ── the section header, repeated at the top of EVERY section ─────────
+   rule · diamond · rule, then the accent label, then the uppercase title.
+   The reference uses a 50px raster ornament; we ship no icon set, so it
+   is a rotated 1px square. Same silhouette, no asset. */
+.head{text-align:center;max-width:62ch;margin:0 auto 48px}
+@media (max-width:767.98px){.head{margin-bottom:32px}}
+.head .orn{display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:20px}
+.head .orn i{display:block;width:100px;height:1px;background:var(--hairline)}
+.head .orn b{display:block;width:22px;height:22px;border:1px solid var(--accent);transform:rotate(45deg)}
+@media (max-width:767.98px){.head .orn i{width:48px}}
+.head .label{margin-bottom:8px}
+.head h2{margin:0}
+.invert .head .orn i{background:var(--dark-hairline)}
+/* ── the button: fills left-to-right on hover ─────────────────────── */
+.btn{position:relative;display:inline-block;overflow:hidden;font-family:var(--display);font-size:16px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;padding:16px 34px;background:var(--accent);color:#fff;min-height:44px}
+.btn span{position:relative;z-index:1}
+.btn::before{content:"";position:absolute;inset:0;background:var(--ink);transform:scaleX(0);transform-origin:left;transition:transform .4s ease}
+.btn:hover::before{transform:scaleX(1)}
+.link{border-bottom:1px solid transparent;transition:border-color .3s,color .3s}
+.link:hover{border-bottom-color:currentColor}
+/* ── hero: 950px, centred type on a scrim ─────────────────────────── */
+.hero{position:relative;height:950px;padding:0;display:flex;align-items:center;justify-content:center;overflow:hidden;text-align:center}
+@media (max-width:767.98px){.hero{height:600px}}
+.hero .shot{position:absolute;inset:0;overflow:hidden}
+.hero .shot img{width:100%;height:100%}
+.hero .scrim{position:absolute;inset:0;background:rgba(30,30,30,.45)}
+.hero .content{position:relative;color:#fff;padding:0 var(--gutter);max-width:900px}
+.hero .label{color:#fff;opacity:.9;margin-bottom:14px}
+.hero h1{color:#fff;margin-bottom:18px}
+.hero .sub{color:rgba(255,255,255,.82);max-width:46ch;margin:0 auto 32px;font-family:var(--body)}
+/* ── the header, transparent over the hero, solid on scroll ───────── */
+.hdr{position:fixed;top:0;left:0;width:100%;z-index:99;padding:18px 0;color:#fff;transition:background .3s,padding .3s}
+.hdr.solid{background:var(--dark);padding:10px 0}
+.hdr .bar{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.hdr .mark{font-family:var(--display);font-size:22px;font-weight:600;line-height:1.1;max-width:44%}
+.hdr nav ul{display:flex;gap:26px;align-items:center}
+.hdr nav a{font-family:var(--display);font-size:15px;text-transform:uppercase;letter-spacing:.06em;min-height:44px;display:flex;align-items:center}
+.hdr nav a:hover{color:var(--accent)}
+@media (max-width:767.98px){.hdr nav{display:none}.hdr .mark{max-width:100%}}
+/* ── the card: photograph, then a border on three sides ───────────── */
+.card{background:var(--ground)}
+.card .meta{overflow:hidden}
+.card .pic{aspect-ratio:4/3;overflow:hidden;border-radius:var(--radius) var(--radius) 0 0}
+.card .pic img{width:100%;height:100%;transition:transform .6s ease}
+.card:hover .pic img{transform:scale(1.06)}
+.card .txt{border:1px solid var(--hairline);border-top:0;padding:24px 30px}
+.card:last-child .meta,.card .meta{border-bottom-left-radius:var(--radius);border-bottom-right-radius:var(--radius)}
+.card .txt h3{margin:10px 0 0;transition:color .3s}
+.card:hover .txt h3{color:var(--accent)}
+.card .meta{border-top:1px solid var(--hairline);padding:16px 30px;font-family:var(--body);font-size:14px;color:var(--dim)}
+/* ── rooms: the three features, in the reference's card grid ─────── */
+.rooms{background:var(--ground)}
+.rooms .set{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+.rooms.cards-wide .set{grid-template-columns:repeat(2,1fr)}
+.rooms.cards-wide .card:first-child{grid-column:1/-1}
+.rooms.cards-wide .card:first-child .pic{aspect-ratio:21/9}
+@media (max-width:991.98px){.rooms .set,.rooms.cards-wide .set{grid-template-columns:1fr;gap:24px}
+  .rooms.cards-wide .card:first-child{grid-column:auto}
+  .rooms.cards-wide .card:first-child .pic{aspect-ratio:4/3}}
+/* ── about: text beside a portrait, with the two real figures ─────── */
+.about .split{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about.text-right .split{direction:rtl}
+.about.text-right .split > *{direction:ltr}
+@media (max-width:991.98px){.about .split,.about.text-right .split{grid-template-columns:1fr;gap:36px;direction:ltr}}
+.about .pic{aspect-ratio:3/4;overflow:hidden;border-radius:var(--radius)}
+.about .pic img{width:100%;height:100%;transition:transform .6s ease}
+.about .pic:hover img{transform:scale(1.05)}
+.about .head{text-align:left;margin:0 0 28px}
+.about .head .orn{justify-content:flex-start}
+.about .stats{display:flex;gap:56px;margin-top:40px;flex-wrap:wrap}
+.about .stats .k{font-family:var(--body);font-size:14px;color:var(--dim);margin-top:6px}
+/* ── the numbered rows: 01 rooms, 02 location. Alternating sides. ─── */
+.rows{background:var(--warm)}
+.rows .row{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.rows .row + .row{margin-top:80px}
+.rows .row.flip{direction:rtl}
+.rows .row.flip > *{direction:ltr}
+@media (max-width:991.98px){.rows .row,.rows .row.flip{grid-template-columns:1fr;gap:28px;direction:ltr}
+  .rows .row + .row{margin-top:56px}}
+.rows .pic{aspect-ratio:3/2;overflow:hidden;border-radius:var(--radius)}
+.rows .pic img{width:100%;height:100%;transition:transform .6s ease}
+.rows .pic:hover img{transform:scale(1.05)}
+.rows .n{margin-bottom:12px}
+.rows h3{font-size:32px;line-height:36px;margin:0 0 16px}
+@media (max-width:767.98px){.rows h3{font-size:26px;line-height:30px}}
+/* ── the dark band ────────────────────────────────────────────────── */
+.invert{background:var(--dark);color:#fff}
+.invert .body,.invert .dim{color:var(--dark-dim)}
+.invert .card .txt,.invert .card .meta{border-color:var(--dark-hairline)}
+.invert .card{background:var(--dark)}
+.invert .card .txt h3{color:#fff}
+/* ── the quote band, over a photograph ────────────────────────────── */
+.quote{position:relative;overflow:hidden;text-align:center}
+.quote .shot{position:absolute;inset:0}
+.quote .shot img{width:100%;height:100%}
+.quote .scrim{position:absolute;inset:0;background:rgba(30,30,30,.72)}
+.quote .ctr{position:relative}
+.quote .head h2,.quote .head .label{color:#fff}
+.quote blockquote{margin:0 auto;max-width:58ch;font-family:var(--display);font-size:26px;line-height:38px;color:#fff}
+@media (max-width:767.98px){.quote blockquote{font-size:20px;line-height:30px}}
+.quote figcaption{margin-top:20px;font-family:var(--body);font-size:14px;color:var(--dark-dim)}
+/* ── location ─────────────────────────────────────────────────────── */
+.loc .split{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.loc.image-right .split{direction:rtl}
+.loc.image-right .split > *{direction:ltr}
+@media (max-width:991.98px){.loc .split,.loc.image-right .split{grid-template-columns:1fr;gap:36px;direction:ltr}}
+.loc .pic{aspect-ratio:4/3;overflow:hidden;border-radius:var(--radius)}
+.loc .pic img{width:100%;height:100%;transition:transform .6s ease}
+.loc .pic:hover img{transform:scale(1.05)}
+.loc .head{text-align:left;margin:0 0 24px}
+.loc .head .orn{justify-content:flex-start}
+.loc .addr{margin-top:24px;font-family:var(--body);color:var(--dim)}
+/* ── the map: the one external request on the page ────────────────── */
+.map{padding:0}
+.map .canvas{height:460px;width:100%;filter:grayscale(1) contrast(1.05)}
+.map iframe{width:100%;height:100%;border:0;display:block}
+@media (max-width:767.98px){.map .canvas{height:320px}}
+/* ── the CTA, and the contact card that overlaps the footer ───────── */
+.cta{text-align:center;background:var(--warm)}
+.cta .tel{display:inline-block;margin-top:26px;font-family:var(--display);font-size:44px;line-height:1;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums;border-bottom:1px solid var(--hairline);padding-bottom:6px;transition:color .3s,border-color .3s}
+.cta .tel:hover{color:var(--accent);border-bottom-color:var(--accent)}
+@media (max-width:767.98px){.cta .tel{font-size:30px}}
+footer{background:var(--dark);color:#fff;padding:0}
+footer .grd{display:grid;grid-template-columns:4fr 3fr 3fr;gap:40px;padding:0 0 60px}
+@media (max-width:991.98px){footer .grd{grid-template-columns:1fr;gap:32px}}
+/* The contact card rides UP out of the footer, as in the reference. */
+footer .contact{background:var(--card);padding:40px 34px;margin-top:-90px}
+@media (max-width:991.98px){footer .contact{margin-top:-60px}}
+footer .contact h3{font-size:22px;margin:0 0 20px;color:#fff}
+footer .contact p,footer .contact a{font-family:var(--body);font-size:15px;line-height:30px;color:var(--dark-dim);display:block}
+footer .contact a:hover{color:var(--accent)}
+footer .col{padding-top:60px}
+footer .col h3{font-size:22px;margin:0 0 20px;color:#fff;font-family:var(--display);font-weight:500}
+footer .col a{font-family:var(--body);font-size:15px;line-height:34px;color:var(--dark-dim);display:flex;align-items:center;min-height:44px}
+footer .col a:hover{color:var(--accent)}
+footer .strip{background:var(--darker);text-align:center;padding:22px 0;font-family:var(--body);font-size:13px;line-height:24px;color:var(--dark-dim)}
+footer .strip p{margin:0}
+/* Final values live HERE. motion.js animates FROM somewhere else and
+   lands back on them, so a page whose script never ran is a page with no
+   animation rather than a page with invisible text. */
+[data-reveal]{opacity:1;transform:none}
+[data-count]{opacity:1}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  [data-reveal],[data-count]{opacity:1!important;transform:none!important}
+}</style><script type="application/ld+json">{"@context":"https://schema.org","@type":"LodgingBusiness","name":"Monte Rosa - Ferienwohnungen - Appartements","description":"Ferienwohnungen im umgebauten Hotel nahe Skiliften. Hunde und Katzen willkommen. Monte Rosa, Saas-Grund, Saastalstrasse 39.","address":{"@type":"PostalAddress","streetAddress":"Innere, Saastalstrasse 39, 3910 Saas-Grund, Switzerland"},"telephone":"027 957 70 80","url":"https://ermirlatifi016.github.io/demos-01/monte-rosa-ferienwohnungen-appartements-saas-fee/","hasMap":"https://maps.google.com/?cid=13302995265455173714&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA"}</script></head><body><header class="hdr"><div class="ctr bar"><p class="mark">Monte Rosa - Ferienwohnungen - Appartements</p><nav><ul><li><a href="#about">Das Haus</a></li><li><a href="#rooms">02 · Die Wohnungen</a></li><li><a href="#location">03 · Die Lage</a></li></ul></nav></div></header><section class="hero"><div class="shot" data-parallax="true"><img src="img/0.jpg" alt="Blick auf das Monte Rosa Gebäude in Saas-Grund, umgeben von Bergen" decoding="async"/></div><div class="scrim"></div><div class="content"><div data-reveal="hero"><h1 class="t-hero">Monte Rosa - Ferienwohnungen - Appartements</h1><p class="sub">Ferienwohnungen für Mensch und Tier</p><a class="btn" href="tel:027 957 70 80"><span>027 957 70 80</span></a></div></div></section><main><section class="rooms cards" id="rooms"><div class="ctr"><div class="head"><div class="orn"><i></i><b></b><i></i></div><p class="label">02 · Die Wohnungen</p><h2 class="t-title">Ferienwohnungen im Überblick</h2></div><div class="set"><div class="card" data-reveal="true"><div class="pic"><img src="img/2.jpg" alt="Moderne Küche in einer Ferienwohnung des Monte Rosa" loading="lazy" decoding="async"/></div><div class="txt"><p class="label">01</p><h3 class="t-card">Haustiere erlaubt</h3></div><div class="meta">Hunde und Katzen sind ausdrücklich willkommen. Viele Gäste reisen mit ihren Vierbeinern an und fühlen sich gut aufgehoben.</div></div><div class="card" data-reveal="true"><div class="txt"><p class="label">02</p><h3 class="t-card">Moderne Küchen</h3></div><div class="meta">Die Küchen in den Ferienwohnungen sind neu und umfassend ausgestattet. Hier lässt sich bequem für mehrere Personen kochen.</div></div><div class="card" data-reveal="true"><div class="txt"><p class="label">03</p><h3 class="t-card">Zentrale Lage</h3></div><div class="meta">Die Unterkunft liegt nahe an Skiliften, Bushaltestelle und Einkaufsmöglichkeiten. Alles ist zu Fuß schnell erreichbar.</div></div></div></div></section><section class="about text-left" id="about"><div class="ctr"><div class="split"><div data-reveal="true"><div class="head" style="text-align:left;margin-left:0"><div class="orn"><i></i><b></b><i></i></div><p class="label">Das Haus</p><h2 class="t-title">Willkommen im Monte Rosa</h2></div><p class="body">Monte Rosa - Ferienwohnungen - Appartements befindet sich in Saas-Grund an der Saastalstrasse 39. Das frühere Hotel wurde in größere, helle Ferienwohnungen umgebaut. Gäste loben die ruhige Atmosphäre, die hilfsbereite Leitung durch Philippe Oggier und die unkomplizierte Aufnahme von Hunden und Katzen. Die Küchen sind neu und gut ausgestattet, einige Bäder sind älteren Datums, aber gepflegt. Einkaufsmöglichkeiten und Skilifte sind in wenigen Minuten erreichbar.</p><div class="stats"><div><p class="t-stat" data-count="true">4.8</p><p class="k">Google</p></div><div><p class="t-stat" data-count="true">20</p><p class="k">Google</p></div></div></div><div class="pic" data-reveal="true"><img src="img/1.jpg" alt="Eingangsbereich des Monte Rosa mit hellen Räumen und Holzboden" loading="lazy" decoding="async"/></div></div></div></section><section class="rows" id="detail"><div class="ctr"><div class="row"><div data-reveal="true"><p class="t-num n">01</p><h3 class="t-card">Ferienwohnungen im Überblick</h3><p class="body">Die ehemaligen Hotelzimmer wurden zu größeren Appartements umgebaut. Die Wohnungen verfügen über moderne Küchen und saubere, teils ältere Bäder. Die Räume sind gepflegt und bieten Platz für Gruppen und Familien.</p></div><div class="pic" data-reveal="true"><img src="img/2.jpg" alt="Moderne Küche in einer Ferienwohnung des Monte Rosa" loading="lazy" decoding="async"/></div></div><div class="row flip"><div data-reveal="true"><p class="t-num n">02</p><h3 class="t-card">Ihre Lage in Saas-Grund</h3><p class="body">Monte Rosa liegt an der Saastalstrasse 39, nahe den Skiliften und der Busstation. Einkaufsmöglichkeiten und die Bahn nach Kreuzboden sind wenige Gehminuten entfernt.</p></div><div class="pic" data-reveal="true"><img src="img/3.jpg" alt="Blick vom Monte Rosa auf die umliegenden Berge und das Dorf Saas-Grund" loading="lazy" decoding="async"/></div></div></div></section><section class="loc image-left" id="location"><div class="ctr"><div class="split"><div data-reveal="true"><div class="head" style="text-align:left;margin-left:0"><div class="orn"><i></i><b></b><i></i></div><p class="label">03 · Die Lage</p><h2 class="t-title">Ihre Lage in Saas-Grund</h2></div><p class="body">Monte Rosa liegt an der Saastalstrasse 39, nahe den Skiliften und der Busstation. Einkaufsmöglichkeiten und die Bahn nach Kreuzboden sind wenige Gehminuten entfernt.</p><p class="addr"><a class="link" href="https://maps.google.com/?cid=13302995265455173714&amp;g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA" target="_blank" rel="noreferrer">Innere, Saastalstrasse 39, 3910 Saas-Grund, Switzerland</a></p></div><div class="pic" data-reveal="true"><img src="img/3.jpg" alt="Blick vom Monte Rosa auf die umliegenden Berge und das Dorf Saas-Grund" loading="lazy" decoding="async"/></div></div></div></section><section class="cta" id="contact"><div class="ctr" data-reveal="true"><div class="head"><div class="orn"><i></i><b></b><i></i></div><h2 class="t-title">Jetzt Kontakt aufnehmen</h2></div><p class="body" style="max-width:52ch;margin:0 auto">Sie suchen eine Unterkunft mit Hund oder Katze in Saas-Grund? Rufen Sie an oder schreiben Sie, um Ihren Aufenthalt persönlich zu besprechen.</p><a class="tel" href="tel:027 957 70 80">027 957 70 80</a></div></section><section class="map" id="map"><div class="canvas"><iframe src="https://maps.google.com/maps?q=46.1226053,7.938028699999999&amp;z=15&amp;output=embed" title="Monte Rosa - Ferienwohnungen - Appartements" loading="lazy" referrerPolicy="no-referrer-when-downgrade" allowFullScreen=""></iframe></div></section></main><footer><div class="ctr"><div class="grd"><div class="contact" data-reveal="true"><h3>Innere, Saastalstrasse 39, 3910 Saas-Grund, Schweiz – Telefon: 027 957 70 80</h3><a href="tel:027 957 70 80">027 957 70 80</a><a href="https://maps.google.com/?cid=13302995265455173714&amp;g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA" target="_blank" rel="noreferrer">Innere, Saastalstrasse 39, 3910 Saas-Grund, Switzerland</a></div><div class="col"><h3>Jetzt Kontakt aufnehmen</h3><a href="#about">Das Haus</a><a href="#rooms">02 · Die Wohnungen</a><a href="#location">03 · Die Lage</a></div><div class="col"><h3>Ihre Lage in Saas-Grund</h3><p class="body">Hunde und Katzen willkommen. Neue Küchen, ruhige Lage nahe Lifte und Einkaufsmöglichkeiten.</p></div></div></div><div class="strip"><div class="ctr"><p>Fotos: Monte Rosa - Ferienwohnungen - Appartements - Natur, Ruhe, Entspannung, Světlana Germekova</p><p>Built by TitanixTech — tools@titanixtech.com</p></div></div></footer><script src="motion.js" defer=""></script></body></html>
